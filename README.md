@@ -47,3 +47,28 @@ formatters by overriding the `customFormatters` attribute.
   };
 }
 ```
+
+## Plymouth GIF Theme
+
+A [Plymouth](https://www.freedesktop.org/wiki/Software/Plymouth/) theme that
+shows a custom GIF on boot. Not exactly useful, but pretty fun. By default it
+uses [this GIF](./plymouth-gif-theme/bounce.gif) of Madeline from the game
+[Celeste](https://www.celestegame.com/), but you can specify a custom GIF by
+overriding the `gif` attribute.
+
+```nix
+{ pkgs, ... }@inputs:
+{
+  boot.plymouth = {
+    enable = true;
+    theme = "plymouth-gif-theme";
+    themePackages = [
+      # Use the default GIF:
+      inputs.toodeluna-pkgs.x86_64-linux.plymouth-gif-theme
+
+      # Or specify a custom GIF:
+      (inputs.toodeluna-pkgs.x86_64-linux.plymouth-gif-theme.override { gif = ./path/to/custom/file.gif })
+    ];
+  };
+}
+```
