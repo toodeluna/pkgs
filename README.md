@@ -20,7 +20,7 @@ add this flake as an input to your own flake:
   outputs =
     { self, nixpkgs, toodeluna-pkgs }:
     {
-      # You can now use the `packages` attribute set of this flake.
+      # You can now use the `packages` attribute set of this flake or use one of the `overlays` attributes to add all the packages to your nixpkgs instance.
     };
 }
 ```

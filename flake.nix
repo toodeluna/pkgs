@@ -19,5 +19,9 @@
         x86_64-linux.plymouth-gif-theme = mkPackage "x86_64-linux" ./plymouth-gif-theme;
         x86_64-linux.treefmt-custom = mkPackage "x86_64-linux" ./treefmt-custom;
       };
+
+      overlays = {
+        x86_64-linux = (_: _: self.packages.x86_64-linux);
+      };
     };
 }
