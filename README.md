@@ -39,7 +39,7 @@ formatters by overriding the `customFormatters` attribute.
 ```nix
 {
   # Use the default formatters:
-  formatter.x86_64-linux = toodeluna-pkgs.packages.x86_64-linyx.treefmt-custom;
+  formatter.x86_64-linux = toodeluna-pkgs.packages.x86_64-linux.treefmt-custom;
 
   # Or specify custom formatters:
   formatter.x86_64-linux = toodeluna-pkgs.packages.x86_64-linux.treefmt-custom.override {
